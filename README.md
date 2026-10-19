@@ -22,7 +22,7 @@
     <li>Use at least five different shape types: rect, circle, ellipse, line, polyline, polygon.</li>
     <li>Intentional use of fill, stroke, and stroke-width.</li>
     <li>Group shapes with g.</li>
-    <li>rUse ole="img" + title to make the SVG accessible.</li>
+    <li>Use role="img" + title to make the SVG accessible.</li>
   <ul>
 </p>
 

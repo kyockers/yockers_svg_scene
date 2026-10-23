@@ -16,17 +16,17 @@ The boat and flag are polygons. The center line, the boat's stripe, and the flag
     <li>Intentional use of fill, stroke, and stroke-width.</li>
     <li>Group shapes with g.</li>
     <li>Use role="img" + title to make the SVG accessible.</li>
-  <ul>
+  </ul>
 <br>
 <p>SVG techniques demonstrated:
-  <ol>
+  <ul>
     <li>viewBox</li>
     <li>fill</li>
     <li>stroke</li>
     <li>text</li>
     <li>grouping</li>
     <li>accessibility</li>
-  </ol>
+  </ul>
 </p>
 
 </p>

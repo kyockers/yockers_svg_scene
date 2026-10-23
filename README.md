@@ -1,11 +1,24 @@
 # yockers_svg_scene
 
-<p>Hand-written SVG scene.</p>
+<p>Hand-written SVG scene<br>
+Created by Kimberley Yockers</p>
 
-<p>Original scene built in HTML and animated using inline SVG markup.
-</p>
+<p>Original scene built in HTML and animated using inline SVG markup.</p>
 <br>
-<p>SVG animation techniques demonstrated:
+<p>SVG scene of the Cactus Boat name (text) and a happy little cactus holding a flag and riding in an orange boat (svg shapes). 
+The background colors, cactus body, and cactus arms are rectangles. The cactus's eyes are circles. The boat's shadow is an ellipse. 
+The boat and flag are polygons. The center line, the boat's stripe, and the flagpole are lines.</p>
+<br>
+<p>Code Objectives:
+  <ul>
+    <li>Set up the SVG root with a proper viewBox.</li>
+    <li>Use at least five different shape types: rect, circle, ellipse, line, polyline, polygon.</li>
+    <li>Intentional use of fill, stroke, and stroke-width.</li>
+    <li>Group shapes with g.</li>
+    <li>Use role="img" + title to make the SVG accessible.</li>
+  <ul>
+<br>
+<p>SVG techniques demonstrated:
   <ol>
     <li>viewBox</li>
     <li>fill</li>
@@ -15,15 +28,7 @@
     <li>accessibility</li>
   </ol>
 </p>
-<br>
-<p>Key Objectives:
-  <ul>
-    <li>Set up the SVG root with a proper viewBox.</li>
-    <li>Use at least five different shape types: rect, circle, ellipse, line, polyline, polygon.</li>
-    <li>Intentional use of fill, stroke, and stroke-width.</li>
-    <li>Group shapes with g.</li>
-    <li>Use role="img" + title to make the SVG accessible.</li>
-  <ul>
+
 </p>
 
 

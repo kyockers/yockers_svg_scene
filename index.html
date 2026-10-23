@@ -1,0 +1,220 @@
+<!--
+GitHub repo URL — https://github.com/kyockers/yockers_svg_scene
+Live web URL — https://kyockers.github.io/yockers_svg_scene
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- 
+The <head> element contains information used by the browser.
+This section sets character encoding, sets display and device width, adds a page title, and loads 
+the external Google font.
+<meta charset="UTF-8"> sets character encoding for the page.
+<meta name="viewport" content="width=device-width, initial-scale=1.0"> sets device width for media queries.
+<title>...</title> adds a descriptive page title.
+<link rel="..."> connects to Google's font server and loads the font.
+-->
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>SVG Scene</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Science+Gothic:wght@100..900&display=swap" rel="stylesheet">
+</head>
+
+<!-- 
+The <body> element holds the webpage's visible content.
+The <main> element holds the page title, the Cactus Boat scene, and two text containers.
+The <h1> element contains the page's headline.
+This section creates the <body> and <main> containers, and adds the page title: "Cactus Boat logo". 
+<body> creates the body container.
+<main> creates the main container.
+<h1> creates the page title.
+-->
+<body>
+  <main>
+    <h1>Cactus Boat logo</h1>
+
+<!-- SVG SCENE -->
+<!-- 
+The <svg> element contains the shapes that form the Cactus Boat scene.
+The <title> element contains a description of the svg scene (for screen readers).
+This section creates a container to hold the Cactus Boat scene, and positions the container 
+on the page. A descriptive title is added for increased accessibility.
+<svg viewBox="0 0 400 300"           Creates an SVG scene container (viewbox) and sets its coordinate bounds (x y x y),
+width="400" height="300"             Sets the viewbox's overall dimensions (pixels),
+role="img"                           Desginates the svg element as an image (used by assistive technology),
+aria-labelledby="cactusboat-scene"   Accesses the descriptive title (used by assistive technology), 
+xmlns="http://www.w3.org/2000/svg">  Marks the contents as SVG elements. (This was new to me, but I think this is what it does)
+<title id="...">                     Adds the descriptive title and assigns it the id "cactusboat-scene".
+-->
+    <svg viewBox="0 0 400 300" width="400" height="300" role="img" aria-labelledby="cactusboat-scene"
+      xmlns="http://www.w3.org/2000/svg">
+      <title id="cactusboat-scene">A happy green cactus riding in a little orange boat.</title>
+
+<!-- SCENE BACKGROUND -->
+<!-- 
+The <line> and <rect> elements are SVG shapes.
+This section creates a line and two rectangles for the scene's background. 
+The top half of the background is light green, the bottom half is light blue. A fine, light blue 
+line marks the scene's horizontal center (helpful in the initial layout).
+<line.../>                  Creates a line,
+<x1="0" y1="150">           Sets the line's starting coordinates in the viewbox,
+<x2="400" y2="150">         Sets the line's ending coordinates in the viewbox,
+<stroke="#a1d8f7">          Makes the line light blue,
+<stroke-width="2">          Makes the line thin.
+<rect.../>                  Creates a background rectangle,
+<x="..." y="...">           Sets the rectangle's starting coordinates in the viewbox,
+<width="..." height="...">  Sets the rectangle's total width and height.
+<fill="#...">               Sets the rectangle's color.
+-->
+      <line x1="0" y1="150" x2="400" y2="150" stroke="#a1d8f7" stroke-width="2" />
+      <rect x="0" y="0" width="400" height="150" fill="#daf7dd" /> <!-- light green -->
+      <rect x="0" y="150" width="400" height="150" fill="#a1d8f7" /> <!-- light blue -->
+
+<!-- BRAND TEXT -->
+<!-- 
+The <g> element holds the scene's brandname.
+The three <text> elements each contain a segment of the brandname.
+This section creates a group of text and positions it in the scene. The text is a large, 
+bold, chunky sans serif. The top segments (cac,us) are dark green. The bottom segment (boat) is dark blue.
+<g id="text">        Creates a container to group text segments, assigns it the id "text",
+<font-family="...">  Sets the font for the group's text elements, 
+<font-size="74">     Makes all contained text elements large.
+<font-weight="700">  Makes all contained text elements bold.
+<text></text>        Creates a segment of brandname text,
+<x="..." y="...">    Sets the segment's start coordinates in the viewbox,
+<fill="#...">        Sets the segment's color.
+-->
+      <g id="text" font-family="'Science Gothic', sans-serif" font-size="74" font-weight="700">
+        <!-- Cactus text -->
+        <text x="43" y="136" fill="#028e17">cac</text> <!-- dark green -->
+        <text x="257" y="136" fill="#028e17">us</text> <!-- dark green -->
+        <!-- Boat text -->
+        <text x="100" y="214" fill="#086db2">boat</text> <!-- dark blue -->
+      </g>
+
+<!-- BOAT SHADOW -->
+<!-- 
+The <ellipse> element is an SVG shape.
+This section creates the boat's shadow and positions it in the scene. The shadow is a dark blue 
+ellipse at 40% opacity, and is centered under the boat shape.
+<ellipse.../>         Creates an ellipse for the boat's shadow,
+<cx="229" cy="157">   Sets the ellipse's center-point coordinates in the viewbox,
+<rx="35" ry="2">      Makes the ellipse wide and short,
+<fill="#086db2">      Makes the ellipse dark blue. 
+<fill-opacity="0.4">  Lowers the ellipse's opacity so it displays as medium blue without needing an additinal color. 
+-->
+      <ellipse cx="229" cy="157" rx="35" ry="2" fill="#086db2" fill-opacity="0.4"/> <!-- 40% dark blue -->
+
+<!-- BODY & ARMS -->
+<!-- 
+The <g> element holds the cactus's body and arms.
+The <rect> elements are SVG shapes.
+This section creates rectangles for the cactus's body and two arms, groups them, and positions them in 
+the scene. The body is a large, dark green rectangle with fully rounded corners. Each arm is made of two 
+dark green rectangles with fully rounded corners, arranged in an L shape.
+<g id="cactus-body">        Creates a container to group the shapes, assigns it the id "cactus-body",
+<fill="#028e17">            Makes all shapes contained in the group dark green.
+<rect x="..." y="...">      Creates a rectangle and sets its start coordinates in the viewbox, 
+<width="..." height="...">  Sets the rectangle's total width and height,
+<rx="..."/>                 Gives the rectangle rounded corners.
+-->
+      <g id="cactus-body" fill="#028e17">
+        <!-- Main body -->
+        <rect x="221" y="84" width="20" height="67" rx="10" />
+        <!-- Left arm -->
+        <rect x="206" y="102" width="12" height="25" rx="6" /> <!-- left arm top -->
+        <rect x="206" y="115" width="20" height="12" rx="6" /> <!-- left arm bottom -->
+        <!-- Right arm -->
+        <rect x="244" y="94" width="12" height="27" rx="6" /> <!-- right arm top -->
+        <rect x="235" y="109" width="20" height="12" rx="6" /> <!-- right arm bottom -->
+      </g>
+
+<!-- EYES -->
+<!-- 
+The <circle> elements are SVG shapes.
+This section creates two circles for the cactus's eyes and positions them in the scene. 
+Each eye is a small black circle.
+<circle.../>         Creates a circle,
+<cx="..." cy="...">  Sets the circle's center-point coordinates in the viewbox,
+<r="2">              Sets the circle's radius,
+<fill="#000000">     Makes the circle black.
+-->
+      <circle cx="227" cy="98" r="2" fill="#000000" /> <!-- left eye -->
+      <circle cx="235" cy="98" r="2" fill="#000000" /> <!-- right eye -->
+
+<!-- BOAT -->
+<!-- 
+The <g> element holds the boat and its stripe.
+The <polygon> and <line> elements are SVG shapes.
+This section creates a polygon for the boat and a line for the boat's stripe, groups them, 
+and positions them near the center of the viewbox.
+<g id="boat">           Creates a container to group the shapes, assigns it the id "boat",
+<polygon points="...">  Sets the coordinates for the polygon's four corners,
+<fill="#ff9900"/>       Makes the boat orange.
+<line.../>              Creates a line for the boat's stripe,
+<x1="199" y1="144">     Sets the lines's starting coordinates in the viewbox,
+<x2="262" y2="144">     Sets the line's ending coordinates in the viewbox,
+<stroke="#ffffff">      Makes the line white,
+<stroke-width="1">      Makes the line thin.
+-->
+      <g id="boat">
+        <polygon points="253,157 208,157 197,137 265,137" fill="#ff9900" />
+        <line x1="199" y1="144" x2="262" y2="144" stroke="#ffffff" stroke-width="1" />
+      </g>
+
+<!-- FLAG & FLAGPOLE -->
+<!-- 
+The <g> element holds the flag and the flagpole.
+The <polygon> and <line> elements are SVG shapes.
+This section creates a polygon (flag) and a line (flagpole), groups them, and positions them in the viewbox. 
+The flag is a dark blue triangle with a thin orange outline. The flagpole is a thin black line.
+<g id="flag">           Creates a container to group the shapes, assigns it the id "flag",
+<polygon points="...">  Creates a polygon for the flag, sets the coordinates for its three corners,
+<fill="#086db2">        Makes the polygon dark blue,
+stroke="#ff9900" stroke-width="2">  Gives the polygon a thin orange outline.
+<line.../>              Creates a line for the flagpole,
+<x1="212" y1="78" x2="212" y2="102">  Sets the line's starting and ending coordinates in the viewbox,
+<stroke="#000000">      Makes the line black,
+<stroke-width="1">      Makes the line thin.
+-->
+      <g id="flag">
+        <polygon points="190,85 211,92 211,80" fill="#086db2" stroke="#ff9900" stroke-width="1" />
+        <line x1="212" y1="78" x2="212" y2="102" stroke="#000000" stroke-width="1" />
+      </g>
+    </svg> <!-- /cactusboat-scene -->
+
+<!-- DESCRIPTION & REFLECTION -->
+<!--
+The <p> elements hold text.
+This section contains the author's summary and reflection.
+<p style="max-width: 65ch;">  Creates a text box, limits line width for greater legibility.
+-->
+    <p style="max-width: 65ch;">
+      I drew the logo for Cactus Boat: a happy little cactus riding in an orange boat, that resembles a
+      plant pot, in front of the company name. The cactus holds a little flag that's waving in the wind.
+      The cactus itself becomes the "t" in "Cactus". The background colors, cactus body, and cactus arms
+      are rectangles with rounded corners. The eyes are circles. The boat shadow is an ellipse. The boat
+      and flag are polygons. The flagpole and center line are lines (center line is hidden for now, but
+      will be used in the animation.)
+    </p>
+
+    <p style="max-width: 65ch;">
+      <strong>Reflection:</strong> I LOVED making this! My design background really helped me in this assignment
+      becuase I work with .svg shapes pretty often. Getting the pieces to fit wasn't actually too hard, it
+      just took a lot of tweaking. The eyes/arms/body of the cactus took the longest to get right since I
+      worked on them first and they needed to set the scale for the rest of the elements. I used the color
+      palette from my previous Cactus Boat page, so I only had to come up with an accent color for the boat/flag.
+      I tried yellow, orange-red, and brown, but they didn't work so i went with a nice bright orange.
+      The Google homepage uses vector graphics for its logo, and SVG scenes to animate their Google Doodles.
+    </p>
+  </main>
+
+</body>
+
+</html>
